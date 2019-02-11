@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <style>
+        body{
+            font-family: 'Permanent Marker', cursive;
+            text-align: center;
+        }
+        #content{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            justify-items: center;
+            text-align: center;
+        }
+        .user{
+            background: #f3f3f3;
+            padding: 10px;
+            box-shadow: 5px 10px 18px #888888;
+            font-family: 'Permanent Marker', cursive;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ajax Basics Using Github's API</h1>
+   <div id="content"></div> 
+   <script>
+       let content = document.getElementById('content');
+       function reqListener() {
+          let res = JSON.parse(this.response);
+          for(let i of res){
+            content.innerHTML += 
+            `<div class='user'>
+                <img src='${i.avatar_url}' height='300' width='300'>
+                <h1>${i.login}</h1>
+                <a href='${i.html_url}'>Profile</a>
+            </div>`
+          }
+       }
+       let xhr = new XMLHttpRequest();
+       xhr.addEventListener('load', reqListener);
+       xhr.open('GET', 'https://api.github.com/users', true);
+       xhr.send();
+   </script>
+</body>
+</html>
