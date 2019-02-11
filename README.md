@@ -1,11 +1,11 @@
-#Just a refresher on AJAX Basics 
+# Just a refresher on AJAX Basics 
 ---
 Nothing too ~~special~~ cool.
-##Goals for this project##
+## Goals for this project
 ---
-1.Make a basic `XMLHttpRequest()`
-2.**Parse** that request
-3.**Render** that request to the `DOM`
-4.Organize content to be easy to style
-5.*Programmering!!!* 👻🚀
+1. Make a basic `XMLHttpRequest()`
+2. **Parse** that request
+3. **Render** that request to the `DOM`
+4. Organize content to be easy to style
+5. *Programmering!!!* 👻🚀
 
